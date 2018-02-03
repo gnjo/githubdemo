@@ -29,8 +29,10 @@ if(code){
 function g(code,cid,cse){
  let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
  ;
+  let xy= "http://cors.io/?u="
  return req
-   .post(url)
+   .post(xy+url)
+//   .post(url)
 .withCredentials()
    .set('Accept', 'application/json')
    .set('content-type','text/plain') 
