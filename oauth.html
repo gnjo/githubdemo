@@ -1,6 +1,6 @@
 <head>
 <link rel="stylesheet" href="//gnjo.github.io/small.css">
-  <script src="//gnjo.github.io/fetch.overwrite.js"></script>
+<!--  <script src="//gnjo.github.io/fetch.overwrite.js"></script> -->
 </head>
 <body>
   <a href="https://github.com/login/oauth/authorize?client_id=a03db186a7c9b816b17e">oauth</a>
@@ -40,21 +40,22 @@ function gettoken2(code,cid,cse){
  location.href=url;
 }
 function gettoken(code,cid,cse){
- let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
+ let url =`https://github.com/login/oauth/access_token`//?code=${code}&client_id=${cid}&client_secret=${cse}`
+ ,b ={ "code":code, "client_id":cid, "client_secret":cse }
  ,headers ={
      //"Authorization":"Basic " + gists.authstring
      //,
    
-     'Access-Control-Allow-Origin':'https://gnjo.github.io'
-     ,'Accept': 'application/json'
+     //'Access-Control-Allow-Origin':'https://gnjo.github.io'
+     'Accept': 'application/json'
      ,'Content-Type': 'application/json'
  }
  ,o={
-    credentials: 'include'
-     ,method:'POST' //'GET'
+    //credentials: 'include'
+     method:'POST' //'GET'
      ,mode:'no-cors' //oauth always no-cors
      ,headers: headers
-     //,body:JSON.stringify(b)
+     ,body:JSON.stringify(b)
  }
  ;
  return fetch(url,o).then(_parseJSON)
