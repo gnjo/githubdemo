@@ -64,6 +64,7 @@ function gettoken(code,cid,cse){
     //'Accept':'text/plain'
      //,'Content-Type': 'application/json'
     // ,'Content-Type': 'text/html'   
+    "Accept": "application/xml"  
  }
  ,o={
     //credentials: 'include'
@@ -75,7 +76,7 @@ function gettoken(code,cid,cse){
  ;
 // return fetch(url)
  return fetch(url,o)
-   .then(logs)
+//   .then(logs)
    .then(_parseJSON)
 //.then(d=> arrayBuffer() )
 //.then(d=> blob() )
