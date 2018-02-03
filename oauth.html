@@ -23,11 +23,23 @@ if(code){
   //gettoken2(code,cid,cse);
   gettoken(code,cid,cse).then((d)=>{ log(d) }).catch((d)=>{console.log('error'); log(d)});
 }
-
+  
+function logs(response){
+    // ステータスコード
+    console.log(response.status); // 200
+    // ステータス（文字列）
+    console.log(response.statusText); // 'OK'
+    // レスポンスヘッダー
+    console.log(response.headers); //  {} : オブジェクト形式で取得可能
+    // URL
+    console.log(response.url); // http://localhost:3000/sample
+  return response;
+}
+  
 function _parseJSON(response) {
   console.log(response);
   console.log(response.body);
-  return response.json();
+  //return response.json();
   return response.text().then(function(text) {
   console.log('xyz');//
   console.log(text);//
@@ -48,10 +60,10 @@ function gettoken(code,cid,cse){
      //,
    
      //'Access-Control-Allow-Origin':'https://gnjo.github.io'
-     'Accept': 'application/json'
+     //'Accept': 'application/json'
     //'Accept':'text/plain'
      //,'Content-Type': 'application/json'
-     ,'Content-Type': 'text/html'   
+    // ,'Content-Type': 'text/html'   
  }
  ,o={
     //credentials: 'include'
@@ -62,7 +74,9 @@ function gettoken(code,cid,cse){
  }
  ;
 // return fetch(url)
- return fetch(url,o).then(_parseJSON)
+ return fetch(url,o)
+   .then(logs)
+   .then(_parseJSON)
 //.then(d=> arrayBuffer() )
 //.then(d=> blob() )
 //.then(d=> json() )
