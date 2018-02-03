@@ -59,11 +59,11 @@ function gettoken(code,cid,cse){
 //     ,body:JSON.stringify(b)
  }
  ;
- return fetch(url,o)//.then(_parseJSON)
+ return fetch(url,o).then(_parseJSON)
 //.then(d=> arrayBuffer() )
 //.then(d=> blob() )
 //.then(d=> json() )
-.then(d=> text() )
+//.then(d=> text() )
 //.then(d=> formData() )
 }  
 </script>  
