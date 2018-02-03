@@ -8,6 +8,7 @@
 
 var log =(str)=>{
  var el =document.createElement('li');
+ console.log(str);
  el.innerHTML=JSON.stringify(str,null,2)
  document.body.appendChild(el);
 }
