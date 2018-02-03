@@ -23,6 +23,7 @@ if(code){
 }
 
 function _parseJSON(response) {
+  console.log(responce);
   return response.text().then(function(text) {
     return text ? JSON.parse(text) : {}
   })
