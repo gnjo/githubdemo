@@ -40,8 +40,8 @@ function gettoken2(code,cid,cse){
  location.href=url;
 }
 function gettoken(code,cid,cse){
- let url =`https://github.com/login/oauth/access_token`//?code=${code}&client_id=${cid}&client_secret=${cse}`
- ,b ={ "code":code, "client_id":cid, "client_secret":cse }
+ let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
+ //,b ={ "code":code, "client_id":cid, "client_secret":cse }
  ,headers ={
      //"Authorization":"Basic " + gists.authstring
      //,
@@ -55,11 +55,11 @@ function gettoken(code,cid,cse){
      method:'POST' //'GET'
      ,mode:'no-cors' //oauth always no-cors
      ,headers: headers
-     ,body:JSON.stringify(b)
+//     ,body:JSON.stringify(b)
  }
  ;
  return fetch(url,o)//.then(_parseJSON)
-   .then(d=>d.json())  // d.json() be denger
+   .then(d=>d.form())  // d.json() be denger
 }  
 </script>  
 </body>
