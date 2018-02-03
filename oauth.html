@@ -23,6 +23,7 @@ if(code){
 }
 
 function gettoken(code,cid,cse){
+ 
  let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
  ,headers ={
      //"Authorization":"Basic " + gists.authstring
@@ -38,7 +39,9 @@ function gettoken(code,cid,cse){
  }
  ;
  return fetch(url,o)
-  .then(d=>d.json())
+  .then((d)=>{return d.json() })
+ //
+ console.log('dont reach');
 }
 </script>
  </body>
