@@ -41,7 +41,10 @@ function gettoken(code,cid,cse){
  }
  ;
  return fetch(url,o)
-  .then((d)=>{return d.json() })
+  .then((response)=>{
+  console.log(response.type); 
+  return response.json()
+ })
  //
  console.log('dont reach');
 }
