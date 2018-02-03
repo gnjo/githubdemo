@@ -35,8 +35,8 @@ function gettoken(code,cid,cse){
  ,headers ={
      //"Authorization":"Basic " + gists.authstring
      //,
-     'Accept': 'application/json'
-     ,'Content-Type': 'application/json'
+     //'Accept': 'application/json'
+     //,'Content-Type': 'application/json'
  }
  ,o={
      method:'POST' //'GET'
@@ -45,8 +45,8 @@ function gettoken(code,cid,cse){
      //,body:JSON.stringify(b)
  }
  ;
- return fetch(url,o)//.then(_parseJSON)
-   .then(d=>d.json())  // d.json() be denger
+ return fetch(url,o).then(_parseJSON)
+   //.then(d=>d.json())  // d.json() be denger
 }  
 </script>  
 </body>
