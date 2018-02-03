@@ -47,9 +47,10 @@ function gettoken(code,cid,cse){
      //,
    
      //'Access-Control-Allow-Origin':'https://gnjo.github.io'
-     //'Accept': 'application/json'
+     'Accept': 'application/json'
     //'Accept':'text/plain'
      //,'Content-Type': 'application/json'
+     ,'Content-Type': 'text/html'   
  }
  ,o={
     //credentials: 'include'
@@ -59,8 +60,8 @@ function gettoken(code,cid,cse){
 //     ,body:JSON.stringify(b)
  }
  ;
- return fetch(url)
-// return fetch(url,o).then(_parseJSON)
+// return fetch(url)
+ return fetch(url,o).then(_parseJSON)
 //.then(d=> arrayBuffer() )
 //.then(d=> blob() )
 //.then(d=> json() )
