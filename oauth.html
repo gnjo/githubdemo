@@ -92,7 +92,7 @@ function gettoken(code,cid,cse){
                 let xhr = new XMLHttpRequest();
                 xhr.open('POST', url, true);
               //'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://gnjo.github.io' is therefore not allowed access.
-                xhr.setRequestHeader('Access-Control-Allow-Origin','https://gnjo.github.io');                            
+                xhr.setRequestHeader('Access-Control-Allow-Origin','*');                            
                 xhr.setRequestHeader('Accept','application/json');
                 xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;application/json;charset=utf-8;');
                 xhr.onload = () => {
