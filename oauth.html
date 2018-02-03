@@ -22,6 +22,12 @@ if(code){
   gettoken(code,cid,cse).then((d)=>{ log(d) })
 }
 
+function _parseJSON(response) {
+  return response.text().then(function(text) {
+    return text ? JSON.parse(text) : {}
+  })
+}  
+  
 function gettoken(code,cid,cse){
  let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
  ,headers ={
@@ -32,13 +38,13 @@ function gettoken(code,cid,cse){
  }
  ,o={
      method:'GET'
-     ,mode:'no-cors'
+     ,mode:'no-cors' //oauth always no-cors
      ,headers: headers
      //,body:JSON.stringify(b)
  }
  ;
- return fetch(url,o).then(d=>d.json())
-  //
+ return fetch(url,o).then(_parseJSON)
+   //.then(d=>d.json())  // d.json() be denger
 }  
 </script>  
 </body>
