@@ -29,13 +29,13 @@ function gettoken(code,cid,cse){
      //"Authorization":"Basic " + gists.authstring
      //,
      'Accept': 'application/json'
-     //,'Content-Type': 'application/json'
-     ,"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+     ,'Content-Type': 'application/json'
+     //,"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
  }
  ,o={
      method:'POST'
      ,credentials: 'include'  
-     ,mode:'no-cors'
+     //,mode:'no-cors'
      ,headers: headers
      //,body:JSON.stringify(b)
  }
