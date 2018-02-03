@@ -25,6 +25,7 @@ if(code){
 
 function _parseJSON(response) {
   console.log(response);
+  console.log(response.body);
   return response.text().then(function(text) {
   console.log('xyz');//
   console.log(text);//
