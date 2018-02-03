@@ -1,7 +1,8 @@
 ## github demo
 ## oauth.html
 https://gnjo.github.io/githubdemo/sa_oauth.html
-~~https://gnjo.github.io/githubdemo/oauth.html
+
+~~https://gnjo.github.io/githubdemo/oauth.html~~
 
 ## oauth にfetchを使うと色々な問題が発生する。
  - 1. 'mode': 'cors' ; が使えない。この場合は、access allow or no-corsと言われる。
