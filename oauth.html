@@ -19,7 +19,8 @@ if(code){
   let cid ='a03db186a7c9b816b17e'
   ,cse ='9ff5ffbd1dd68602940ffd5bf91d3ae4f347ba1c'
   ;
-  gettoken(code,cid,cse).then((d)=>{ log(d) }).catch((d)=>{console.log('error'); log(d)});
+  gettoken2(code,cide,cse);
+  //gettoken(code,cid,cse).then((d)=>{ log(d) }).catch((d)=>{console.log('error'); log(d)});
 }
 
 function _parseJSON(response) {
@@ -29,7 +30,12 @@ function _parseJSON(response) {
     return text ? JSON.parse(text) : {}
   })
 }  
-  
+
+function gettoken2(code,cid,cse){
+ let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
+ ;
+ location.href=url;
+}
 function gettoken(code,cid,cse){
  let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
  ,headers ={
