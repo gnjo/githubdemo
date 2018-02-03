@@ -1,0 +1,45 @@
+<html>
+ <head>
+<link rel="stylesheet" href="//gnjo.github.io/small.css"> 
+ </head>
+ <body>
+ <a href="https://github.com/login/oauth/authorize?client_id=a03db186a7c9b816b17e">oauth</a>
+<script>
+var log =(str)=>{
+ var el =document.createElement('li');
+ el.innerHTML=str;//JSON.stringify(str,null,2)
+ document.body.appendChild(el);
+}
+//var add = (~location.href.indexOf('?'))? '&code=ec570bdff21e498ed153' : '?code=ec570bdff21e498ed153';
+//history.pushState(null,null,add)
+//log(location.href)
+//https://gnjo.github.io/githubdemo/oauth.html?code=ec570bdff21e498ed153
+var code = location.search.split('code=').slice(1,2)[0];
+if(code){
+  let cid ='a03db186a7c9b816b17e'
+  ,cse ='9ff5ffbd1dd68602940ffd5bf91d3ae4f347ba1c'
+  ;
+  gettoken(code,cid,cse).then((d)=>{console.log(d); log(d) })
+}
+
+function gettoken(code,cid,cse){
+ let url =`https://github.com/login/oauth/access_token?code=${code}&client_id=${cid}&client_secret=${cse}`
+ ,headers ={
+     //"Authorization":"Basic " + gists.authstring
+     //,
+     'Accept': 'application/json'
+     ,'Content-Type': 'application/json'
+ }
+ ,o={
+     method:'POST'
+     ,mode:'no-cors'
+     ,headers: headers
+     //,body:JSON.stringify(b)
+ }
+ ;
+ return fetch(url,o)
+  .then(d=>d.json())
+}
+</script>
+ </body>
+</html>
