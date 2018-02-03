@@ -19,11 +19,12 @@ if(code){
   let cid ='a03db186a7c9b816b17e'
   ,cse ='9ff5ffbd1dd68602940ffd5bf91d3ae4f347ba1c'
   ;
-  gettoken(code,cid,cse).then((d)=>{ log(d) })
+  gettoken(code,cid,cse).then((d)=>{ log(d) }).catch((d)=>{console.log('error'); log(d)});
 }
 
 function _parseJSON(response) {
   return response.text().then(function(text) {
+  console.log('xyz');//
   console.log(text);//
     return text ? JSON.parse(text) : {}
   })
