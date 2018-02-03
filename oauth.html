@@ -45,8 +45,8 @@ function gettoken(code,cid,cse){
      //,body:JSON.stringify(b)
  }
  ;
- return fetch(url,o).then(_parseJSON)
-   //.then(d=>d.json())  // d.json() be denger
+ return fetch(url,o)//.then(_parseJSON)
+   .then(d=>d.json())  // d.json() be denger
 }  
 </script>  
 </body>
