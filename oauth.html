@@ -48,7 +48,8 @@ function gettoken(code,cid,cse){
      ,'Content-Type': 'application/json'
  }
  ,o={
-     method:'POST' //'GET'
+    credentials: 'include'
+     ,method:'POST' //'GET'
      ,mode:'no-cors' //oauth always no-cors
      ,headers: headers
      //,body:JSON.stringify(b)
